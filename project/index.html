@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sign Up</title>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/log.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<div class="btn1"><img class="men-btn" src="img/r-menu.png" alt="menbtn">
+			</div>
+			<div class="logo"><img class="logo" src="img/logo.png" alt="logo">
+			</div>
+			<div class="btn2"><img class="close" src="img/Close.png" alt="close">
+			</div>
+		</header>
+    <section class="box content">
+  				<div class="step-wrap"></div>
+  				<h1 id="mainheading">CREATE ACCOUNT</h1>
+  				<form name="suForm" id="form" onsubmit="return formValidation()" action="">
+  					<i class="fas fa-signature"></i><input id="na" type="text" name="name" placeholder="name">
+  					<br>
+  					<i class="far fa-envelope"></i><input id="email" type="email" name="email" placeholder="example@yourhost.com">
+  					<br>
+  					<i class="fas fa-unlock-alt"></i><input id="pass" type="password" name="password" placeholder="password">
+  					<br>
+  					<input type="submit" value="Continue">
+  				</form>
+    </section>
+	</div>
+  <script src="js/project.js"></script>
+</body>
+</html>

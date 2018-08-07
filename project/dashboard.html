@@ -1,0 +1,215 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dashboard</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/test.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+	 <!––navigatie––>
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div id="top-circles">
+			<div class="top-circles l_t_circle">
+				<img src="img/upload.png" alt="upload">
+			</div>
+			<div class="top-circles c_t_circle"></div>
+			<div class="top-circles r_t_circle">
+				<img src="img/download.png" alt="download"></div>
+		</div>
+		<form name="suForm" id="form" onsubmit="return formValidation()" action="">
+  			<i class="fas fa-signature"></i><input id="na" type="text" name="name" placeholder="name">
+  			<br>
+  			<i class="fas fa-user-md"></i><input id="occupation" type="text" name="occupation" placeholder="occupation">
+  			<br>
+  			<i class="far fa-envelope"></i><input id="email" type="email" name="email" placeholder="example@yourhost.com">
+  			<br>
+  			<i class="fas fa-unlock-alt"></i><input id="pass" type="password" name="password" placeholder="password">
+  			<br>
+  		</form>
+  		<div id="notifications">
+  			<h3>EMAIL NOTIFICATIONS</h3>
+  			<div class="checkboxes checkboxesA">  
+				<input type="checkbox" value="None" id="checkboxes" name="check" checked />
+				<label for="checkboxes"></label>
+			</div>
+			<div class="checkboxes checkboxesB"> 
+				<input type="checkbox" value="None" id="checkboxes2" name="check" checked />
+				<label for="checkboxes2"></label>
+			</div>
+			<div class="checkboxes checkboxesC"> 
+				<input type="checkbox" value="None" id="checkboxes3" name="check" checked />
+				<label for="checkboxes3"></label>
+			</div>
+			<div class="checkboxes checkboxesD"> 
+				<input type="checkbox" value="None" id="checkboxes4" name="check" checked />
+				<label for="checkboxes4"></label>
+			</div>
+			<div class="checkboxes checkboxesE"> 
+				<input type="checkbox" value="None" id="checkboxes5" name="check" checked />
+				<label for="checkboxes5"></label>
+			</div>
+  		</div>
+	</div>
+	 <!––document––>
+	<div class="container">
+		<header class="header">
+			<div class="btn1"><img class="men-btn" src="img/r-menu.png" alt="menbtn">
+			</div>
+			<div class="logo"><img class="logo" src="img/logo.png" alt="logo">
+			</div>
+			<div class="btn2">
+				<img class="close" src="img/search.png" alt="close">
+				<img class="btn2img" src="img/poza-cv_small.png" alt="close" onclick="openNav()">
+				<img class="close" src="img/card.png" alt="close">
+			</div>
+		</header>
+		<div class="science">
+			<div class="spacerScience"></div>
+			<div class="scienceWrap">
+				<h2>Astronauts could land on Red Planet by 2039</h2>
+				<div  class="scienceInfo">
+					<p class="source">SPACE.com</p>
+					<p class="since">20m ago</p>
+					<p class="sci">SCIENCE<p>
+				</div>
+			</div>
+		</div>
+
+		<div class="weather">
+			<div class="weatherInfo">
+        <div class="weatherIcon"></div>
+				<h3 id="weather">Partly Cloudy</h3>
+				<h4 class="city"></h4>
+			</div>
+			<div class="weatherTabs">
+				<p onclick="fetchWeather()">TODAY</p>
+				<p onclick="fetchWeatherT()">TOMORROW</p>
+				<p>WEEK</p>
+			</div>
+			<div class="curentWeather"><p><span class="temperature">N/A</span>&#176;</p></div>
+			<div class="prognosis1">
+				<p class="tempPrognosis"><span class="temperature">N/A</span>&#176;</p>
+				<p class="tempHour"><span id="currentHour"></span></p>
+			</div>
+			<div class="prognosis2">
+				<p class="tempPrognosis"><span class="temp2">N/A</span>&#176;</p>
+				<p class="tempHour"><span id="hour2">6&nbsp;</span></p>
+			</div>
+			<div class="prognosis3">
+				<p class="tempPrognosis"><span class="temp3">N/A</span>&#176;</p>
+				<p class="tempHour"><span id="hour3">6&nbsp;</span></p>
+			</div>
+			<div class="prognosis4">
+				<p class="tempPrognosis"><span class="temp4">N/A</span>&#176;</p>
+				<p class="tempHour"><span id="hour4">6&nbsp;</span></p>
+			</div>
+			<div class="prognosis5">
+				<p class="tempPrognosis"><span class="temp5">N/A</span>&#176;</p>
+				<p class="tempHour"><span id="hour5">6&nbsp;</span></p>
+			</div>
+			<div class="prognosis6">
+				<p class="tempPrognosis"><span class="temp6">N/A</span>&#176;</p>
+				<p class="tempHour"><span id="hour6">6&nbsp;</span></p>
+			</div>
+			<div class="prognosis7">
+				<p class="tempPrognosis"><span class="temp7">N/A</span>&#176;</p>
+				<p class="tempHour"><span id="hour7">6&nbsp;</span></p>
+			</div>
+			<div class="prognosis8">
+				<p class="tempPrognosis"><span class="temp8">N/A</span>&#176;</p>
+				<p class="tempHour"><span id="hour8">6&nbsp;</span></p>
+			</div>
+		</div>
+		<div id="t1" class="graphTabs tab1" onclick="showNasdaq()">
+			<div class="tabl">
+				<div class="tabName"><h3>NASDAQ</h3></div>
+				<div class="tabValue"><p>5,055.55</p></div>
+			</div>
+			<div class="tabr">
+				<div class="tDiff tDiff1"><h2 class="tDiffC">-0.85<span>%</span></h2></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div id="t2" class="graphTabs tab2" onclick="showAppl()">
+			<div class="tabl">
+				<div class="tabName"><h3>APPL</h3></div>
+				<div class="tabValue"><p>126.56</p></div>
+			</div>
+			<div class="tabr">
+				<div class="tDiff tDiff2"><h2 class="tDiffC">+0.51<span>%</span></h2></div>
+			</div>
+		</div>
+		<div id="t3" class="graphTabs tab3" onclick="showDow()">
+			<div class="tabl">
+				<div class="tabName"><h3>DOW J</h3></div>
+				<div class="tabValue"><p>19,926.02</p></div>
+			</div>
+			<div class="tabr">
+				<div class="tDiff tDiff3"><h2 class="tDiffC">-0.34<span>%</span></h2></div>
+			</div>
+		</div>
+		<div id="t4" class="graphTabs tab4" onclick="showGoog()">
+			<div class="tabl">
+				<div class="tabName"><h3>GOOG</h3></div>
+				<div class="tabValue"><p>534.53</p></div>
+			</div>
+			<div class="tabr">
+				<div class="tDiff tDiff4"><h2 class="tDiffC">+0.70<span>%</span></h2></div>
+			</div>
+		</div>
+		<div class="info">
+			<div class="infoTitle"><h2>NASDAQ: AAPL<h2></div>
+			<div class="infoVal"><p>127.33</p></div>
+			<div class="infoDate"><p></p></div>
+		</div>
+		<div class="det details1">
+			<table class="firstT">	
+				<tr>
+					<td class="datatitle">Low</td>
+					<td><span id="lowValRes"></span></td>
+				</tr><tr>
+					<td  class="datatitle">High</td>
+					<td><span id="highValRes"></span></td>
+				</tr><tr>
+					<td class="datatitle">Open</td>
+					<td id="averageVal"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="det details2">
+			<table class="secondT">	
+				<tr>
+					<td class="datatitle">Market cap</td>
+					<td><span>735.34B</span></td>
+				</tr><tr>
+					<td class="datatitle">Dividend yield</td>
+					<td><span>1.63%</span></td>
+				</tr><tr>
+					<td class="datatitle">P/E ratio (ttm)</td>
+					<td>15.73</td>
+				</tr>
+			</table>
+		</div>
+		<div class="det details3">
+			<div>1YEAR</div>
+		</div>
+		<div class="graph">
+      		<canvas id="myChart"></canvas>
+		</div>
+		<div class="t1f">
+		</div>
+		<div class="t2f">
+		</div>
+	</div>
+<script src="js/project.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,636 @@
+html, body
+{
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+div {
+  border: 1px solid red;
+}
+header {
+  background-color: #f96332;
+}
+p, h1, h2, h3, h4 {
+  color: white;
+}
+p {font-size: 15px;}
+
+/* navigatie */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 64px;
+    right: 0;
+    background-color: #f96332;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+    box-shadow: 6px 4px 25px #000;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+#top-circles {
+    margin: auto;
+    width: 315px;
+}
+.top-circles {
+    background-color: rgba(255, 255, 255, .2);
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    display: inline-block;
+    position: relative;
+}
+.l_t_circle{
+  margin-right: -30px;
+}
+.r_t_circle{
+  margin-left: -30px;
+  z-index: 5;
+}
+.c_t_circle{
+  z-index: 9;
+  background-image: url(../img/poza-cv_small.png);
+  background-size: cover;
+}
+.l_t_circle img, .r_t_circle img {
+  margin: 45px;
+  height: 30px;
+}
+form#form {
+  margin: 40px auto;
+}
+form#form, #mainheading {
+  display: block;
+  //margin: auto;
+  z-index: 2;
+  width: 330px;
+  margin: 40px auto;
+  display: block;
+}
+section.content {
+  text-align: center;
+  margin:0 auto;
+  height: 100%;
+  z-index: 9;
+  padding: 200px 0;
+}
+input {
+  margin: 10px 0;
+  border-radius: 25px;
+  width: 325px;
+  height: 55px;
+  border: none;
+  background-color: rgba(255, 255, 255, .2);
+  padding-left: 60px;
+  padding-right: 60px;
+  color: #fff;
+}
+/**/
+/*
+header .box img {
+  height: 20px;
+  margin: 20px auto;
+}
+header .c-header {
+  margin: auto;
+}
+header .l-header {
+  margin-left: 20px;
+}
+header .r-header img {
+  margin-right: 20px;
+  float: right;
+}
+.cont {
+  margin: auto;
+}*/
+form i {
+  position: absolute;
+    margin-top: 25px;
+    margin-left: 20px;
+    color: #d1bbb3;
+    font-size: 25px;
+}
+/*.centerSection {
+  margin: auto;
+}*/
+#notifications {
+  width: 330px;
+  margin: auto;
+}
+.checkboxes {
+  width: 30px;
+  height: 10px;
+  background: rgba(10, 10, 10, 0.2);
+  margin: 20px 0 20px auto;
+  position: relative;
+  border-radius: 50px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+}
+.checkboxes label {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  cursor: pointer;
+  background: #fcfff4;
+  background: linear-gradient(to bottom, #ecba42 0%, #dfe5d7 40%, #f96332 80%);
+  border-radius: 50px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+}
+.checkboxes input[type=checkbox] {
+  visibility: hidden;
+}
+.checkboxes input[type=checkbox]:checked + label {
+  left: 20px;
+  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 20%, #b3bead 100%);
+}
+.checkboxes::before {
+    margin-left: -300px;
+    color: White;
+    font-family: sans-serif;
+    font-size: 10px;
+    margin-top: -20px;
+}
+.checkboxesA::before {
+    content: "Monday";
+}
+.checkboxesB::before {
+    content: "Tuesday";
+}
+.checkboxesC::before {
+    content: "Wednesday";
+}
+.checkboxesD::before {
+    content: "Thursday";
+}
+.checkboxesE::before {
+    content: "Friday";
+}
+
+#mySidenav {display: none;}
+
+
+
+
+
+/* header */
+.header div img {
+  height: 20px;
+  width: 20px;
+  margin: 22px 10px;
+}
+.logo {
+  text-align: center;
+}
+.btn2 {
+  text-align: right;
+}
+
+
+
+
+
+
+.container {
+  //height: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 60px 90px 240px 120px 130px;
+  grid-template-areas: "h h h h h h"
+                       "h h h h h h"
+                       "w w w w w w"
+                       "t1f t1f t1f t2f t2f t2f"
+                       "t1f t1f t1f t2f t2f t2f";
+}
+.header {grid-area: h;}
+.science {grid-area: s;}
+.weather {grid-area: w;}
+.tab1 {grid-area: t1;}
+.tab2 {grid-area: t2;}
+.tab3 {grid-area: t3;}
+.tab4 {grid-area: t4;}
+.info {grid-area: i;}
+.details {grid-area: d;}
+.graph {grid-area: g;}
+.t1f {grid-area: t1f; background-color: gray;}
+.t2f {grid-area: t2f; background-color: green;}
+.science {display: none;}
+  .btn1 {grid-area: b1;}
+  .btn2 {grid-area: b2;}
+  .logo {grid-area: l;}
+  .header {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "b1 l b2";
+}
+.weather {
+	padding: 10px;
+}
+  .details3 {display: none;}
+  .graphTabs .tabl, .graphTabs .tabr {
+    width: auto;
+  }
+  .container .tab1, .container .tab2, .container .tab3, .container .tab4 {
+    //height: auto;
+    display: block;
+    padding: 35px 0;
+  }
+  .tabl .tabName h3, .tDiff h2 {
+    font-size: 20px;
+  }
+  .det td {
+    padding: 5px;
+    font-size: 12px;
+  }
+  tr .datatitle {
+    width: auto;
+  }
+  div.det table, div.details3 {
+    margin: 10px;
+  }
+@media only screen and (max-width : 480px) {
+	.weatherTabs{
+		display:none;
+	}
+	.curentWeather{
+		margin-top: -50px;
+	}
+}
+.tab1, .tab2, .tab3, .tab4, .info, .details, .graph, .details2, .details1, .details3, .container div#t1, .container div#t2, .container div#t3, .container div#t4 {display: none;}
+
+@media only screen and (min-width : 480px) {
+  .tab1, .tab2, .tab3, .tab4, .info, .details, .graph, .details2, .details1, .container div#t1, .container div#t2, .container div#t3, .container div#t4 {display: block;}
+  .t1f, .t2f {display: none;}
+  #mySidenav {display: none;}
+  .container {
+    //height: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(21, 60px);
+    grid-template-areas: "h h h h h h h h"
+                         "w w w w w w w w"
+                         "w w w w w w w w"
+                         "w w w w w w w w"
+                         "w w w w w w w w"
+                         "w w w w w w w w"
+                         "w w w w w w w w"
+                         "w w w w w w w w"
+                         "w w w w w w w w"
+                         "t1 t1 t2 t2 t3 t3 t4 t4"
+                         "t1 t1 t2 t2 t3 t3 t4 t4"
+                         "i i i . d1 d1 d2 d2"
+                         "i i i . d1 d1 d2 d2"
+                         "g g g g g g g g"
+                         "g g g g g g g g"
+                         "g g g g g g g g"
+                         "g g g g g g g g"
+                         "g g g g g g g g";
+  }
+  .header {grid-area: h;}
+  .science {grid-area: s;}
+  .weather {grid-area: w;}
+  .tab1 {grid-area: t1;}
+  .tab2 {grid-area: t2;}
+  .tab3 {grid-area: t3;}
+  .tab4 {grid-area: t4;}
+  .info {grid-area: i;}
+  .details {grid-area: d;}
+  .details1 {grid-area: d1;}
+  .details2 {grid-area: d2;}
+  .details3 {grid-area: d3;}
+  .graph {grid-area: g;}
+  .weather {
+    padding: 30px;
+  }
+}
+
+@media (min-width : 768px) {
+
+  #mySidenav {display: block;}
+  .science, .tab1, .tab2, .tab3, .tab4, .info, .details, .graph, .details2, .details1, .details3, .graphTabs{display: block;}
+  .t1f, .t2f {display: none;}
+  .container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 0.48fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "h h h h h h h h h h h h"
+                         "s s s s s s w w w w w w"
+                         "s s s s s s w w w w w w"
+                         "s s s s s s w w w w w w"
+                         "s s s s s s w w w w w w"
+                         "t1 t1 t1 i i i d1 d1 d2 d2 d3 d3"
+                         "t2 t2 t2 i i i . . . . . ."
+                         "t3 t3 t3 g g g g g g g g g"
+                         "t4 t4 t4 g g g g g g g g g";
+  }
+  /*60px 125px 125px 125px 125px 125px 125px 125px 125px*/
+  .header {grid-area: h;}
+  .science {grid-area: s;}
+  .weather {grid-area: w;}
+  .tab1 {grid-area: t1;}
+  .tab2 {grid-area: t2;}
+  .tab3 {grid-area: t3;}
+  .tab4 {grid-area: t4;}
+  .info {grid-area: i;}
+  .details {grid-area: d;}
+  .graph {grid-area: g;}
+  .details1 {grid-area: d1;}
+  .details2 {grid-area: d2;}
+  .details3 {grid-area: d3;}
+
+  .science {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto 70px;
+    grid-template-areas: "ss"
+                         "sw";
+  }
+  .spacerScience {grid-area: ss;}
+  .scienceWrap {grid-area: sw;}
+  .container div#t1, .container div#t2, .container div#t3, .container div#t4 {
+    //height: auto;
+    display: flex;
+  }
+  .graphTabs .tabl, .graphTabs .tabr {
+    width: 100%;
+  }
+  .details3 {display: block;}
+
+  .tabl .tabName h3, .tDiff h2 {
+    font-size: 30px;
+  }
+
+  div.det table, div.details3 {
+    margin: 30px;
+  }
+  .weather {
+    padding: 30px;
+  }
+}
+.btn2 .btn2img{
+  border-radius: 11px;
+  height: 22px;
+  width: 22px;
+}
+
+
+#myChart {
+  height: 100%;
+}
+
+.container .science{
+  background: url('../img/web-dashboard(1).jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 30px 30px;
+}
+/* .scienceWrap {
+  height: 160px;
+
+}
+.spacerScience {
+  height: 60%;
+} */
+body h2 {
+  font-size: 30px;
+  color: #fff;
+}
+
+.scienceWrap h2 {
+  width: 80%;
+
+}
+.scienceInfo {
+  padding: 15px 0px;
+}
+.scienceInfo * {
+  display: inline;
+  color: #fff;
+  font-size: 10px;
+}
+.source, .since {
+  margin-right: 20px;
+  padding-bottom: 10px;
+}
+.source::before {
+  content: url(../img/source1.png);
+  width: 10px;
+  transform: scale(.5);
+  padding-right: 10px;
+  margin: auto;
+}
+.since::before {
+  content: url(../img/time1.png);
+  width: 10px;
+  transform: scale(.5);
+  padding-right: 10px;
+  margin: auto;
+}
+.sci {
+  float: right;
+  border-bottom: 2px solid #fff;
+  transition: all 0.5s;
+}
+body .sci:hover {
+  border-bottom: 2px solid #f96332;
+  transition: all 0.5s;
+}
+
+.weather {
+    background-color: #ffb235;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 30px 160px auto 50px;
+    grid-template-areas: "wi wi wi wi wt wt wt wt"
+                         "wi wi wi wi cw cw cw cw"
+                         ". . . . . . . ."
+                         "pr1 pr2 pr3 pr4 pr5 pr6 pr7 pr8";
+  }
+  .weatherInfo {grid-area: wi;}
+  .weatherTabs {grid-area: wt;}
+  .curentWeather {grid-area: cw;}
+  .prognosis1 {grid-area: pr1;}
+  .prognosis2 {grid-area: pr2;}
+  .prognosis3 {grid-area: pr3;}
+  .prognosis4 {grid-area: pr4;}
+  .prognosis5 {grid-area: pr5;}
+  .prognosis6 {grid-area: pr6;}
+  .prognosis7 {grid-area: pr7;}
+  .prognosis8 {grid-area: pr8;}
+
+.weatherInfo img {width: 120px;}
+.weatherInfo h3 {
+  margin: 5px 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+.weatherIcon i {
+
+    font-size: 80px;
+    color: #fff;
+  }
+.weatherTabs * {
+  display: inline;
+}
+.selectedTab{
+  background-color: #E5E6E5;
+}
+.weatherTabs {
+  margin: auto;
+  margin-right: 0;
+}
+.weatherTabs p {
+  font-size: 10px;
+  font-weight: bold;
+  margin:0 10px;
+  border-bottom: 1px solid #ffb235;
+  transition: all 0.5s;
+  margin: 0 20px;
+}
+.weatherTabs p:hover {
+  border-bottom: 1px solid #fff;
+  transition: all 0.5s;
+}
+.curentWeather p {
+  font-size: 160px;
+  font-weight: bold;
+  width: 100%;
+  text-align: right;
+}
+.tempPrognosis, .tempHour {
+  text-align: center;
+}
+.tempHour {
+  font-size: 10px;
+  margin-left: -14px;
+}
+.tempPrognosis {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+div .tab1, div .tab2, div .tab3, div .tab4 {
+  
+  //height: auto;
+  display: flex;
+}
+.tabl, .tabr {
+  width: 50%;
+  padding:0px 30px;
+  margin: auto 0;
+}
+.tabl {
+  float: left;
+}
+.tabl * {
+  color: black;
+}
+.tabl h3 {
+  font-size: 30px;
+}
+.tabl p {
+  font-size: 10px;
+}
+.rabr {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.info {
+  padding: 20px;
+}
+.info * {
+  color: black;
+}
+.infoTitle h2 {
+  font-size: 20px;
+}
+.infoVal p {
+  font-size: 70px;
+}
+.infoDate p {
+  font-size: 10px;
+}
+.header {
+    padding: 0 30px;
+}
+.tDiff1 h2, .tDiff3 h2 {
+  color: green;
+}
+.tDiff2 h2, .tDiff4 h2 {
+  color: red;
+}
+.det table, .details3 {
+  margin: 30px;
+}
+.det * {
+  font-family: sans-serif;
+}
+.datatitle {
+  color: gray;
+  width: 110px;
+}
+.det td {
+  padding: 5px;
+}
+.details3 {
+  padding: 12px;
+  padding-left: 60px;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 150px;
+  height: 40px;
+}
+.details3::before {
+  content: url(../img/Untitled-1.png);
+  width: 10px;
+  //transform: scale(.5);
+  //padding-right: 10px;
+  margin-left:-40px; 
+  margin-top: -10px
+}
+.details3 div {
+  margin-top:-23px; 
+}
+.infoTitle h2 {
+    color: lightgray;
+    font-weight: bolder;
+}
